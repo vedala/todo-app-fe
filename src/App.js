@@ -1,4 +1,6 @@
+import { isDocument } from "@testing-library/user-event/dist/utils";
 import React from "react"
+import ShortUniqueId from "short-unique-id";
 import './App.css';
 import Header from "./components/Header"
 import TaskList from "./components/TaskList"
@@ -22,21 +24,27 @@ function App() {
     DONE: 'DONE'
   }
 
+  const uid = new ShortUniqueId()
+
   const [tasks, setTasks] = React.useState(
     [
       {
+        id: uid(),
         text: "task1",
         status: TASK_STATUS.ACTIVE
       },
       {
+        id: uid(),
         text: "task2",
         status: TASK_STATUS.ACTIVE
       },
       {
+        id: uid(),
         text: "task3",
         status: TASK_STATUS.DONE
       },
       {
+        id: uid(),
         text: "task4",
         status: TASK_STATUS.DONE
       }
@@ -45,6 +53,7 @@ function App() {
 
   function handleTaskCreate(newTaskText) {
     const newTask = {
+      id: uid(),
       text: newTaskText,
       status: TASK_STATUS.ACTIVE
     }
