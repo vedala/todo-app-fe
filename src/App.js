@@ -30,7 +30,12 @@ function App() {
     ]
   )
 
-  function handleTaskCreate(newTask) {
+  function handleTaskCreate(newTaskText) {
+    const newTask = {
+      text: newTaskText,
+      status: TASK_STATUS.ACTIVE
+    }
+
     setTasks(prevState => {
       return [...prevState, newTask]
     })
