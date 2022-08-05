@@ -8,25 +8,28 @@ function TaskInput(props) {
         setTaskText(value)
     }
 
-    function handleButtonClick() {
+    function handleSubmit(e) {
+        e.preventDefault()
         props.handleTasksChange(taskText)
+        setTaskText("")
     }
 
     return (
-        <div>
+        <form>
             <label htmlFor="task">Add Task</label>
             <input
                 id="task"
                 type="text"
                 name="task"
                 onChange={handleChange}
+                value={taskText}
             />
             <button
-                onClick={handleButtonClick}
+                onClick={handleSubmit}
             >
                 Create
             </button>
-        </div>
+        </form>
     )
 }
 
