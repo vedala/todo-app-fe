@@ -4,6 +4,19 @@ import Header from "./components/Header"
 import TaskList from "./components/TaskList"
 
 function App() {
+
+  const MENU_TABS = {
+    TO_DO: 'TO_DO',
+    DONE: 'DONE',
+    ALL: 'ALL'
+  }
+
+  const [selectedTab, setSelectedTab] = React.useState(MENU_TABS.TO_DO)
+
+  function handleTabSelection(tabClicked) {
+      setSelectedTab(tabClicked)
+  }
+
   const TASK_STATUS = {
     ACTIVE: 'ACTIVE',
     DONE: 'DONE'
@@ -43,8 +56,18 @@ function App() {
 
   return (
     <div className="App">
-      <Header handleTaskCreate={handleTaskCreate} />
-      <TaskList tasks={tasks}/>
+      <Header
+        selectedTab={selectedTab}
+        MENU_TABS={MENU_TABS}
+        handleTaskCreate={handleTaskCreate}
+        handleTabSelection={handleTabSelection}
+      />
+      <TaskList
+        selectedTab={selectedTab}
+        MENU_TABS={MENU_TABS}
+        tasks={tasks}
+        TASK_STATUS={TASK_STATUS}
+      />
     </div>
   );
 }

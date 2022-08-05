@@ -7,7 +7,11 @@ function Header(props) {
         <div>
             <h1>To-Do List</h1>
             <TaskInput handleTaskCreate={props.handleTaskCreate}/>
-            <Menu />
+            <Menu
+                selectedTab={props.selectedTab}
+                MENU_TABS={props.MENU_TABS}
+                handleTabSelection={props.handleTabSelection}
+            />
         </div>
     )
 }
