@@ -20,3 +20,11 @@
 .menu--selected {
     border: 1px solid #aaaaaa;
 }
+
+.task-list {
+    margin-top: 30px;
+}
+
+.task-list > li {
+    list-style: none;
+}

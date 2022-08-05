@@ -16,7 +16,7 @@ function TaskList(props) {
     })
 
     return (
-        <ul>
+        <ul className="task-list">
             {tasksElems}
         </ul>
     )
