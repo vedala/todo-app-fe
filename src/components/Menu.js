@@ -11,14 +11,28 @@ function Menu() {
 
     function handleClick(tabClicked) {
         setSelectedTab(tabClicked)
-        console.log(tabClicked)
     }
 
     return (
         <ul className="menu">
-            <li onClick={() => handleClick(MENU_TABS.TO_DO)}>TO DO</li>
-            <li onClick={() => handleClick(MENU_TABS.DONE)}>DONE</li>
-            <li onClick={() => handleClick(MENU_TABS.ALL)}>ALL</li>
+            <li
+                onClick={() => handleClick(MENU_TABS.TO_DO)}
+                className={selectedTab === MENU_TABS.TO_DO ? "menu--selected" : undefined}
+            >
+                TO DO
+            </li>
+            <li
+                onClick={() => handleClick(MENU_TABS.DONE)}
+                className={selectedTab === MENU_TABS.DONE ? "menu--selected" : undefined}
+            >
+                DONE
+            </li>
+            <li
+                onClick={() => handleClick(MENU_TABS.ALL)}
+                className={selectedTab === MENU_TABS.ALL ? "menu--selected" : undefined}
+            >
+                ALL
+            </li>
         </ul>
     )
 }
