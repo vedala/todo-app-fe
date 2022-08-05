@@ -12,7 +12,14 @@ function TaskList(props) {
     })
 
     const tasksElems = tasksToDisplay.map((task, index) => {
-        return <li key={index}>{task.text}</li>
+        return (
+            <li
+                key={index}
+            >
+                <input type="checkbox" />
+                <span>{task.text}</span>
+            </li>
+        )
     })
 
     return (
