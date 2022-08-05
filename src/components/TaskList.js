@@ -1,8 +1,14 @@
 import React from "react"
 
-function TaskList() {
+function TaskList(props) {
+    const tasksElems = props.tasks.map((task, index) => {
+        return <p key={index}>{task}</p>
+    })
+
     return (
-        <h3>Tasks</h3>
+        <div>
+            {tasksElems}
+        </div>
     )
 }
 
