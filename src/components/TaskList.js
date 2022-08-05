@@ -5,9 +5,9 @@ function TaskList(props) {
         if (props.selectedTab === props.MENU_TABS.ALL) {
             return true
         } else if (props.selectedTab === props.MENU_TABS.TO_DO) {
-            return task.status === props.TASK_STATUS.ACTIVE
+            return task.active
         } else {
-            return task.status === props.TASK_STATUS.DONE
+            return !task.active
         }
     })
 
@@ -22,7 +22,7 @@ function TaskList(props) {
             >
                 <input
                     type="checkbox"
-                    checked={task.status === props.TASK_STATUS.DONE}
+                    checked={!task.active}
                     onChange={() => handleCheckboxClick(task.id)}
                 />
                 <span>{task.text}</span>
