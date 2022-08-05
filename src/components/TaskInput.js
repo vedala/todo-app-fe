@@ -8,7 +8,7 @@ function TaskInput(props) {
         setTaskText(value)
     }
 
-    function handleButtonClick(event) {
+    function handleButtonClick() {
         props.handleTasksChange(taskText)
     }
 
