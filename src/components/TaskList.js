@@ -11,8 +11,7 @@ function TaskList(props) {
         }
     })
 
-    console.log(tasksToDisplay)
-    const tasksElems = props.tasks.map((task, index) => {
+    const tasksElems = tasksToDisplay.map((task, index) => {
         return <li key={index}>{task.text}</li>
     })
 
