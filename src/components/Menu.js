@@ -19,19 +19,19 @@ function Menu() {
                 onClick={() => handleClick(MENU_TABS.TO_DO)}
                 className={selectedTab === MENU_TABS.TO_DO ? "menu--selected" : undefined}
             >
-                TO DO
+                <span>TO DO</span>
             </li>
             <li
                 onClick={() => handleClick(MENU_TABS.DONE)}
                 className={selectedTab === MENU_TABS.DONE ? "menu--selected" : undefined}
             >
-                DONE
+                <span>DONE</span>
             </li>
             <li
                 onClick={() => handleClick(MENU_TABS.ALL)}
                 className={selectedTab === MENU_TABS.ALL ? "menu--selected" : undefined}
             >
-                ALL
+                <span>ALL</span>
             </li>
         </ul>
     )
