@@ -63,6 +63,19 @@ function App() {
     })
   }
 
+  function updateTaskStatus(taskId) {
+    setTasks(prevTasks => prevTasks.map(task => {
+        if (task.id === taskId) {
+          return {
+            ...task,
+            status: task.status === TASK_STATUS.ACTIVE ? TASK_STATUS.DONE : TASK_STATUS.ACTIVE
+          }
+        } else {
+          return task
+        }
+      }))
+  }
+
   return (
     <div className="App">
       <Header
@@ -76,6 +89,7 @@ function App() {
         MENU_TABS={MENU_TABS}
         tasks={tasks}
         TASK_STATUS={TASK_STATUS}
+        updateTaskStatus={updateTaskStatus}
       />
     </div>
   );

@@ -11,8 +11,8 @@ function TaskList(props) {
         }
     })
 
-    function handleCheckboxClick(index) {
-        console.log(index)
+    function handleCheckboxClick(taskId) {
+        props.updateTaskStatus(taskId)
     }
 
     const tasksElems = tasksToDisplay.map((task, index) => {
@@ -23,7 +23,7 @@ function TaskList(props) {
                 <input
                     type="checkbox"
                     checked={task.status === props.TASK_STATUS.DONE}
-                    onChange={() => handleCheckboxClick(index)}
+                    onChange={() => handleCheckboxClick(task.id)}
                 />
                 <span>{task.text}</span>
             </li>
