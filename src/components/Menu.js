@@ -2,7 +2,7 @@ import React from "react"
 
 function Menu() {
     return (
-        <ul>
+        <ul className="menu">
             <li>TO DO</li>
             <li>DONE</li>
             <li>ALL</li>

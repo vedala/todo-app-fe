@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+}
+
+.App {
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu > li {
+    list-style: none;
+}
