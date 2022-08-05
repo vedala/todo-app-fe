@@ -10,7 +10,7 @@ function TaskInput(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        props.handleTasksChange(taskText)
+        props.handleTaskCreate(taskText)
         setTaskText("")
     }
 

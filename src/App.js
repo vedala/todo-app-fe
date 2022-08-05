@@ -6,7 +6,7 @@ import TaskList from "./components/TaskList"
 function App() {
   const [tasks, setTasks] = React.useState(["task1", "task2"])
 
-  function handleTasksChange(newTask) {
+  function handleTaskCreate(newTask) {
     setTasks(prevState => {
       return [...prevState, newTask]
     })
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header handleTasksChange={handleTasksChange} />
+      <Header handleTaskCreate={handleTaskCreate} />
       <TaskList tasks={tasks}/>
     </div>
   );

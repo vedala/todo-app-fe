@@ -5,7 +5,7 @@ function Header(props) {
     return (
         <div>
             <h1>To-Do List</h1>
-            <TaskInput handleTasksChange={props.handleTasksChange}/>
+            <TaskInput handleTaskCreate={props.handleTaskCreate}/>
         </div>
     )
 }
