@@ -68,7 +68,7 @@ function App() {
         } else {
           return task
         }
-      }))
+    }))
   }
 
   return (
