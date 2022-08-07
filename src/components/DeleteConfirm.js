@@ -1,8 +1,18 @@
 import React from "react"
 
 function DeleteConfirm() {
+
+    const [displayOverlay, setDisplayOverlay] = React.useState(false)
+
+    function handleDeleteConfirmClick() {
+        setDisplayOverlay(prevState => !prevState)
+    }
+
     return (
-        <button>DELETE ALL TASKS</button>
+        <div>
+            <button onClick={handleDeleteConfirmClick}>DELETE ALL TASKS</button>
+            {displayOverlay && <div className="delete-overlay">Overlay Window</div>}
+        </div>
     )
 
 }
