@@ -4,6 +4,7 @@ import ShortUniqueId from "short-unique-id";
 import './App.css';
 import Header from "./components/Header"
 import TaskList from "./components/TaskList"
+import Footer from "./components/Footer"
 
 function App() {
 
@@ -86,6 +87,7 @@ function App() {
         tasks={tasks}
         updateTaskStatus={updateTaskStatus}
       />
+      <Footer />
     </div>
   );
 }
