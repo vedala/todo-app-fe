@@ -1,4 +1,5 @@
 import React from "react"
+import DeleteConfirm from "./DeleteConfirm"
 
 function TaskList(props) {
     const [deletePrepStatus, setDeletePrepStatus] = React.useState(false)
@@ -38,7 +39,7 @@ function TaskList(props) {
 
     return (
         <div className="task-list">
-            {deletePrepStatus && <button>DELETE ALL TASKS</button>}
+            {deletePrepStatus && <DeleteConfirm />}
             <ul>
                 {tasksElems}
             </ul>
