@@ -10,6 +10,7 @@ function Header(props) {
             <Menu
                 selectedTab={props.selectedTab}
                 MENU_TABS={props.MENU_TABS}
+                tasks={props.tasks}
                 handleTabSelection={props.handleTabSelection}
             />
         </div>

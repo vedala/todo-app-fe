@@ -76,6 +76,7 @@ function App() {
       <Header
         selectedTab={selectedTab}
         MENU_TABS={MENU_TABS}
+        tasks={tasks}
         handleTaskCreate={handleTaskCreate}
         handleTabSelection={handleTabSelection}
       />
