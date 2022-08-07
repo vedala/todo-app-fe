@@ -1,6 +1,8 @@
 import React from "react"
 
 function TaskList(props) {
+    const [deletePrepStatus, setDeletePrepStatus] = React.useState(false)
+
     const tasksToDisplay = props.tasks.filter(task => {
         if (props.selectedTab === props.MENU_TABS.ALL) {
             return true
@@ -30,10 +32,20 @@ function TaskList(props) {
         )
     })
 
+    function handleDeletePrepClick() {
+        setDeletePrepStatus(prevState => !prevState)
+    }
+
     return (
-        <ul className="task-list">
-            {tasksElems}
-        </ul>
+        <div className="task-list">
+            {deletePrepStatus && <button>DELETE ALL TASKS</button>}
+            <ul>
+                {tasksElems}
+            </ul>
+            <button onClick={handleDeletePrepClick}>
+                {deletePrepStatus ? "Delete Cancel" : "Delete Prepare"}
+            </button>
+        </div>
     )
 }
 
