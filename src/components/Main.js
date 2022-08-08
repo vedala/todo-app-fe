@@ -17,7 +17,7 @@ function Main(props) {
 
     return (
         <div className="main">
-            <div>
+            <div className="main-content-wrapper">
                 {deletePrepStatus && <DeleteConfirm handleDeleteConfirmClick={handleDeleteConfirmClick}/>}
                 <TaskList
                     tasks={props.tasks}
@@ -27,7 +27,7 @@ function Main(props) {
                     handleDeletePrepClick={handleDeletePrepClick}
                     updateTaskStatus={props.updateTaskStatus}
                 />
-                <button onClick={handleDeletePrepClick}>
+                <button className="main-delete-prepare" onClick={handleDeletePrepClick}>
                     {deletePrepStatus ? "Delete Cancel" : "Delete Prepare"}
                 </button>
             </div>
