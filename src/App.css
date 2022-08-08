@@ -2,10 +2,16 @@
     margin: 0;
 }
 
+html, body {
+    height: 100%;
+}
+
 .App {
     width: 400px;
     margin-right: auto;
     margin-left: auto;
+    min-height: 100vh;
+    background-color: blue;
 }
 
 .menu {
@@ -25,6 +31,9 @@
 .main {
     margin-top: 30px;
     position: relative;
+    padding-bottom: 30px;
+    min-height: 100vh;
+    background-color: rgba(0, 100, 0, 0.5);
 }
 
 .task-list {
