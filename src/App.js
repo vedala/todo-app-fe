@@ -3,7 +3,7 @@ import React from "react"
 import ShortUniqueId from "short-unique-id";
 import './App.css';
 import Header from "./components/Header"
-import TaskList from "./components/TaskList"
+import Main from "./components/Main"
 
 function App() {
 
@@ -80,7 +80,7 @@ function App() {
         handleTaskCreate={handleTaskCreate}
         handleTabSelection={handleTabSelection}
       />
-      <TaskList
+      <Main
         selectedTab={selectedTab}
         MENU_TABS={MENU_TABS}
         tasks={tasks}
