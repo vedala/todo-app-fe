@@ -24,6 +24,7 @@
 
 .main {
     margin-top: 30px;
+    position: relative;
 }
 
 .task-list {
