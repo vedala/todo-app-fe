@@ -1,7 +1,7 @@
 import React from "react"
 import DeleteConfirm from "./DeleteConfirm"
 
-function TaskList(props) {
+function Main(props) {
     const [deletePrepStatus, setDeletePrepStatus] = React.useState(false)
 
     const tasksToDisplay = props.tasks.filter(task => {
@@ -38,7 +38,7 @@ function TaskList(props) {
     }
 
     return (
-        <div className="task-list">
+        <div className="main">
             {deletePrepStatus && <DeleteConfirm />}
             <ul>
                 {tasksElems}
@@ -50,4 +50,4 @@ function TaskList(props) {
     )
 }
 
-export default TaskList
+export default Main
