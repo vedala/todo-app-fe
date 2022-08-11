@@ -42,6 +42,7 @@ html, body {
     margin-top: 30px;
     padding-bottom: 30px;
     flex: 1;
+    position: relative;
 }
 
 .task-list > li {
@@ -53,4 +54,14 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.overlay {
+
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
 }

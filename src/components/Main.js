@@ -5,12 +5,14 @@ import DeleteConfirm from "./DeleteConfirm"
 function Main(props) {
     const [deletePrepStatus, setDeletePrepStatus] = React.useState(false)
 
+    const [displayOverlay, setDisplayOverlay] = React.useState(false)
+
     function handleDeletePrepClick() {
         setDeletePrepStatus(prevState => !prevState)
     }
 
     function handleDeleteConfirmClick() {
-        console.log("DeleteConfirmClick")
+        setDisplayOverlay(prevState => !prevState)
     }
 
     return (
@@ -33,6 +35,7 @@ function Main(props) {
                     </button>
                 </div>
             </div>
+            {displayOverlay && <div className="overlay">Overlay Div</div>}
         </div>
     )
 }
