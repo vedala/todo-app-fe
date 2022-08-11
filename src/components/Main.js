@@ -16,18 +16,22 @@ function Main(props) {
     return (
         <div className="main">
             <div className="main-sub-container">
-                {deletePrepStatus && <DeleteConfirm handleDeleteConfirmClick={handleDeleteConfirmClick}/>}
-                <TaskList
-                    tasks={props.tasks}
-                    MENU_TABS={props.MENU_TABS}
-                    selectedTab={props.selectedTab}
-                    deletePrepStatus={deletePrepStatus}
-                    handleDeletePrepClick={handleDeletePrepClick}
-                    updateTaskStatus={props.updateTaskStatus}
-                />
-                <button className="main--sub-delete-prepare" onClick={handleDeletePrepClick}>
-                    {deletePrepStatus ? "Delete Cancel" : "Delete Prepare"}
-                </button>
+                <div className="main-sub-top">
+                    {deletePrepStatus && <DeleteConfirm handleDeleteConfirmClick={handleDeleteConfirmClick}/>}
+                    <TaskList
+                        tasks={props.tasks}
+                        MENU_TABS={props.MENU_TABS}
+                        selectedTab={props.selectedTab}
+                        deletePrepStatus={deletePrepStatus}
+                        handleDeletePrepClick={handleDeletePrepClick}
+                        updateTaskStatus={props.updateTaskStatus}
+                    />
+                </div>
+                <div className="main-sub-bottom">
+                    <button className="main--sub-delete-prepare" onClick={handleDeletePrepClick}>
+                        {deletePrepStatus ? "Delete Cancel" : "Delete Prepare"}
+                    </button>
+                </div>
             </div>
         </div>
     )
