@@ -11,7 +11,6 @@ html, body {
     width: 400px;
     margin-right: auto;
     margin-left: auto;
-    min-height: 100vh;
     background-color: blue;
 }
 
@@ -33,23 +32,8 @@ html, body {
     margin-top: 30px;
     position: relative;
     padding-bottom: 30px;
-    min-height: 100%;
     background-color: rgba(0, 100, 0, 0.5);
 }
-
-.main-content-wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;   
-}
-
-.main-delete-prepare {
-    margin-top: auto;
-}
-/* 
-.task-list {
-    position: relative;
-} */
 
 .task-list > li {
     list-style: none;
