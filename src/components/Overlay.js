@@ -3,7 +3,9 @@ import React from "react"
 function Overlay() {
     return (
         <div className="overlay">
-            Overlay Div
+            <div className="overlay-content">
+                Overlay-Content
+            </div>
         </div>
     )
 }
