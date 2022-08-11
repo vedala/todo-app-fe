@@ -1,6 +1,7 @@
 import React from "react"
 import TaskList from "./TaskList"
 import DeleteConfirm from "./DeleteConfirm"
+import Overlay from "./Overlay"
 
 function Main(props) {
     const [deletePrepStatus, setDeletePrepStatus] = React.useState(false)
@@ -35,7 +36,7 @@ function Main(props) {
                     </button>
                 </div>
             </div>
-            {displayOverlay && <div className="overlay">Overlay Div</div>}
+            {displayOverlay && <Overlay />}
         </div>
     )
 }
