@@ -72,7 +72,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="app">
       <Header
         selectedTab={selectedTab}
         MENU_TABS={MENU_TABS}

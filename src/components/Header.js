@@ -4,7 +4,7 @@ import Menu from "./Menu"
 
 function Header(props) {
     return (
-        <div>
+        <div className="header">
             <h1>To-Do List</h1>
             <TaskInput handleTaskCreate={props.handleTaskCreate}/>
             <Menu
