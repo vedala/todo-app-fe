@@ -3,10 +3,6 @@
     box-sizing: border-box;
 }
 
-/* html, body {
-    height: 100%;
-} */
-
 html, body {
     height: 100%;
 }
@@ -19,9 +15,7 @@ html, body {
     width: 400px;
     margin-right: auto;
     margin-left: auto;
-    background-color: blue;
     height: 100%;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -47,7 +41,6 @@ html, body {
 .main {
     margin-top: 30px;
     padding-bottom: 30px;
-    background-color: rgba(0, 100, 0, 0.5);
     flex: 1;
 }
 
