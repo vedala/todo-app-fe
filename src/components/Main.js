@@ -28,6 +28,7 @@ function Main(props) {
                         deletePrepStatus={deletePrepStatus}
                         handleDeletePrepClick={handleDeletePrepClick}
                         updateTaskStatus={props.updateTaskStatus}
+                        deleteTask={props.deleteTask}
                     />
                 </div>
                 <div className="main-sub-bottom">

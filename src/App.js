@@ -71,6 +71,10 @@ function App() {
     }))
   }
 
+  function deleteTask(taskId) {
+    setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId))
+  }
+
   return (
     <div className="app">
       <Header
@@ -85,6 +89,7 @@ function App() {
         MENU_TABS={MENU_TABS}
         tasks={tasks}
         updateTaskStatus={updateTaskStatus}
+        deleteTask={deleteTask}
       />
     </div>
   );
