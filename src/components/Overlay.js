@@ -1,13 +1,15 @@
 import React from "react"
 
-function Overlay() {
+function Overlay(props) {
     return (
         <div className="overlay">
             <div className="overlay-content">
                 <h3>Clear All Tasks</h3>
                 <p>Are you sure you want to remove all tasks?</p>
                 <div>
-                    <button>
+                    <button
+                        onClick={props.cancelDisplayOverlay}
+                    >
                         CANCEL
                     </button>
                     <button>

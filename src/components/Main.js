@@ -16,6 +16,10 @@ function Main(props) {
         setDisplayOverlay(prevState => !prevState)
     }
 
+    function handleCancelDisplayOverlay() {
+        setDisplayOverlay(prevState => !prevState)
+    }
+
     return (
         <div className="main">
             <div className="main-sub-container">
@@ -37,7 +41,8 @@ function Main(props) {
                     </button>
                 </div>
             </div>
-            {displayOverlay && <Overlay />}
+            {displayOverlay && <Overlay cancelDisplayOverlay={handleCancelDisplayOverlay} />
+            }
         </div>
     )
 }
