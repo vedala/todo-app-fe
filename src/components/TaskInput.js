@@ -2,6 +2,7 @@ import React from "react"
 
 function TaskInput(props) {
     const [taskText, setTaskText] = React.useState("")
+    const [buttonIsDisabled, setButtonIsDisabled] = React.useState(true)
 
     function handleChange(event) {
         const {name, value} = event.target
@@ -16,6 +17,10 @@ function TaskInput(props) {
         }
     }
 
+    React.useEffect(() => {
+        setButtonIsDisabled(taskText.length === 0)
+    }, [taskText])
+
     return (
         <form>
             <label htmlFor="task">Add Task</label>
@@ -28,6 +33,7 @@ function TaskInput(props) {
             />
             <button
                 onClick={handleSubmit}
+                disabled={buttonIsDisabled}
             >
                 Create
             </button>
