@@ -12,7 +12,9 @@ function Overlay(props) {
                     >
                         CANCEL
                     </button>
-                    <button>
+                    <button
+                        onClick={props.deleteAllTasks}
+                    >
                         CONFIRM
                     </button>
                 </div>
