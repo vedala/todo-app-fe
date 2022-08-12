@@ -7,6 +7,10 @@ html, body {
     height: 100%;
 }
 
+body {
+    padding-bottom: 40px;
+}
+
 #root {
     height: 100%;
 }
