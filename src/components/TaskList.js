@@ -23,7 +23,7 @@ function TaskList(props) {
                     onChange={() => handleCheckboxClick(task.id)}
                 />
                 <span>{task.text}</span>
-                {props.deletePrepStatus &&
+                {props.deleteModeStatus &&
                     <button
                         onClick={() => handleTaskDeleteClick(task.id)}
                     >

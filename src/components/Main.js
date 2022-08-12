@@ -4,12 +4,12 @@ import DeleteConfirm from "./DeleteConfirm"
 import Overlay from "./Overlay"
 
 function Main(props) {
-    const [deletePrepStatus, setDeletePrepStatus] = React.useState(false)
+    const [deleteModeStatus, setDeleteModeStatus] = React.useState(false)
 
     const [displayOverlay, setDisplayOverlay] = React.useState(false)
 
-    function handleDeletePrepClick() {
-        setDeletePrepStatus(prevState => !prevState)
+    function handleDeleteModeClick() {
+        setDeleteModeStatus(prevState => !prevState)
     }
 
     function handleDeleteConfirmClick() {
@@ -23,27 +23,26 @@ function Main(props) {
     function handleConfirmDisplayOverlay() {
         props.deleteAllTasks()
         setDisplayOverlay(prevState => !prevState)
-        setDeletePrepStatus(false)
+        setDeleteModeStatus(false)
     }
 
     return (
         <div className="main">
             <div className="main-sub-container">
                 <div className="main-sub-top">
-                    {deletePrepStatus && <DeleteConfirm handleDeleteConfirmClick={handleDeleteConfirmClick}/>}
+                    {deleteModeStatus && <DeleteConfirm handleDeleteConfirmClick={handleDeleteConfirmClick}/>}
                     <TaskList
                         tasks={props.tasks}
                         MENU_TABS={props.MENU_TABS}
                         selectedTab={props.selectedTab}
-                        deletePrepStatus={deletePrepStatus}
-                        handleDeletePrepClick={handleDeletePrepClick}
+                        deleteModeStatus={deleteModeStatus}
                         updateTaskStatus={props.updateTaskStatus}
                         deleteTask={props.deleteTask}
                     />
                 </div>
                 <div className="main-sub-bottom">
-                    <button className="main--sub-delete-prepare" onClick={handleDeletePrepClick}>
-                        {deletePrepStatus ? "Delete Cancel" : "Delete Prepare"}
+                    <button className="main--sub-delete-prepare" onClick={handleDeleteModeClick}>
+                        {deleteModeStatus ? "Exit Delete Mode" : "Enter Delete Mode"}
                     </button>
                 </div>
             </div>
