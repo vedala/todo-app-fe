@@ -4,7 +4,16 @@ function Overlay() {
     return (
         <div className="overlay">
             <div className="overlay-content">
-                Overlay-Content
+                <h3>Clear All Tasks</h3>
+                <p>Are you sure you want to remove all tasks?</p>
+                <div>
+                    <button>
+                        CANCEL
+                    </button>
+                    <button>
+                        CONFIRM
+                    </button>
+                </div>
             </div>
         </div>
     )
