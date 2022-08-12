@@ -23,6 +23,7 @@ function Main(props) {
     function handleConfirmDisplayOverlay() {
         props.deleteAllTasks()
         setDisplayOverlay(prevState => !prevState)
+        setDeletePrepStatus(false)
     }
 
     return (
