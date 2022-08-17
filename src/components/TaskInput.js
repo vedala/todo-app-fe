@@ -30,6 +30,7 @@ function TaskInput(props) {
                 name="task"
                 onChange={handleChange}
                 value={taskText}
+                disabled={props.deleteModeStatus}
             />
             <button
                 onClick={handleSubmit}

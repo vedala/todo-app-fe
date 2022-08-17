@@ -6,7 +6,10 @@ function Header(props) {
     return (
         <div className="header">
             <h1>To-Do List</h1>
-            <TaskInput handleTaskCreate={props.handleTaskCreate}/>
+            <TaskInput
+                handleTaskCreate={props.handleTaskCreate}
+                deleteModeStatus={props.deleteModeStatus}
+            />
             <Menu
                 selectedTab={props.selectedTab}
                 MENU_TABS={props.MENU_TABS}

@@ -97,6 +97,7 @@ function App() {
                 tasks={tasks}
                 handleTaskCreate={handleTaskCreate}
                 handleTabSelection={handleTabSelection}
+                deleteModeStatus={deleteModeStatus}
             />
             <Main
                 selectedTab={selectedTab}
