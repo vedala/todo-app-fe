@@ -15,8 +15,18 @@ function App() {
 
     const [selectedTab, setSelectedTab] = React.useState(MENU_TABS.TO_DO)
 
+    const [deleteModeStatus, setDeleteModeStatus] = React.useState(false)
+
     function handleTabSelection(tabClicked) {
         setSelectedTab(tabClicked)
+    }
+
+    function handleDeleteModeClick() {
+        setDeleteModeStatus(prevState => !prevState)
+    }
+
+    function assignFalseToDeleteModeStatus() {
+        setDeleteModeStatus(false)
     }
 
     const uid = new ShortUniqueId()
@@ -95,6 +105,9 @@ function App() {
                 updateTaskStatus={updateTaskStatus}
                 deleteTask={deleteTask}
                 deleteAllTasks={deleteAllTasks}
+                deleteModeStatus={deleteModeStatus}
+                handleDeleteModeClick={handleDeleteModeClick}
+                assignFalseToDeleteModeStatus={assignFalseToDeleteModeStatus}
             />
         </div>
     );

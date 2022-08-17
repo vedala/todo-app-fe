@@ -4,13 +4,7 @@ import DeleteConfirm from "./DeleteConfirm"
 import Overlay from "./Overlay"
 
 function Main(props) {
-    const [deleteModeStatus, setDeleteModeStatus] = React.useState(false)
-
     const [displayOverlay, setDisplayOverlay] = React.useState(false)
-
-    function handleDeleteModeClick() {
-        setDeleteModeStatus(prevState => !prevState)
-    }
 
     function handleDeleteConfirmClick() {
         setDisplayOverlay(prevState => !prevState)
@@ -23,26 +17,26 @@ function Main(props) {
     function handleConfirmDisplayOverlay() {
         props.deleteAllTasks()
         setDisplayOverlay(prevState => !prevState)
-        setDeleteModeStatus(false)
+        props.assignFalseToDeleteModeStatus()
     }
 
     return (
         <div className="main">
             <div className="main-sub-container">
                 <div className="main-sub-top">
-                    {deleteModeStatus && <DeleteConfirm handleDeleteConfirmClick={handleDeleteConfirmClick}/>}
+                    {props.deleteModeStatus && <DeleteConfirm handleDeleteConfirmClick={handleDeleteConfirmClick}/>}
                     <TaskList
                         tasks={props.tasks}
                         MENU_TABS={props.MENU_TABS}
                         selectedTab={props.selectedTab}
-                        deleteModeStatus={deleteModeStatus}
+                        deleteModeStatus={props.deleteModeStatus}
                         updateTaskStatus={props.updateTaskStatus}
                         deleteTask={props.deleteTask}
                     />
                 </div>
                 <div className="main-sub-bottom">
-                    <button className="main--sub-delete-prepare" onClick={handleDeleteModeClick}>
-                        {deleteModeStatus ? "Exit Delete Mode" : "Enter Delete Mode"}
+                    <button className="main--sub-delete-prepare" onClick={props.handleDeleteModeClick}>
+                        {props.deleteModeStatus ? "Exit Delete Mode" : "Enter Delete Mode"}
                     </button>
                 </div>
             </div>
