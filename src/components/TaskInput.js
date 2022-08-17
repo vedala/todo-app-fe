@@ -34,7 +34,7 @@ function TaskInput(props) {
             />
             <button
                 onClick={handleSubmit}
-                disabled={buttonIsDisabled}
+                disabled={buttonIsDisabled || props.deleteModeStatus}
             >
                 Create
             </button>
