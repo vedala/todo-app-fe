@@ -12,6 +12,8 @@ function App() {
         ALL: 'ALL'
     }
 
+    const LOCAL_STORAGE_KEY = "ToDoAppItems"
+
     const [selectedTab, setSelectedTab] = React.useState(MENU_TABS.TO_DO)
 
     const [deleteModeStatus, setDeleteModeStatus] = React.useState(false)
@@ -31,12 +33,12 @@ function App() {
     const uid = new ShortUniqueId()
 
     const [tasks, setTasks] = React.useState(() => {
-        const savedTasks = JSON.parse(localStorage.getItem("ToDoAppItems"))
+        const savedTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
         return savedTasks || []
     })
 
     React.useEffect(() => {
-        localStorage.setItem("ToDoAppItems", JSON.stringify(tasks))
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks))
     }, [tasks])
 
     function handleTaskCreate(newTaskText) {
