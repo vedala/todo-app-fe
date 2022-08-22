@@ -31,30 +31,37 @@ function App() {
 
     const uid = new ShortUniqueId()
 
-    const [tasks, setTasks] = React.useState(
-        [
-            {
-                id: uid(),
-                text: "task1",
-                active: true
-            },
-            {
-                id: uid(),
-                text: "task2",
-                active: true
-            },
-            {
-                id: uid(),
-                text: "task3",
-                active: false
-            },
-            {
-                id: uid(),
-                text: "task4",
-                active: false
-            }
-        ]
-    )
+    const [tasks, setTasks] = React.useState(() => {
+        const savedTasks = JSON.parse(localStorage.getItem("ToDoAppItems"))
+        return savedTasks || []
+    })
+
+    //     [
+    //         {
+    //             id: uid(),
+    //             text: "task1",
+    //             active: true
+    //         },
+    //         {
+    //             id: uid(),
+    //             text: "task2",
+    //             active: true
+    //         },
+    //         {
+    //             id: uid(),
+    //             text: "task3",
+    //             active: false
+    //         },
+    //         {
+    //             id: uid(),
+    //             text: "task4",
+    //             active: false
+    //         }
+    //     ]
+
+    React.useEffect(() => {
+        localStorage.setItem("ToDoAppItems", JSON.stringify(tasks))
+    }, [tasks])
 
     function handleTaskCreate(newTaskText) {
         const newTask = {
