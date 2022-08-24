@@ -6,4 +6,5 @@ test('renders the App page', () => {
     render(<App />)
 
     expect(screen.getByRole("heading")).toHaveTextContent(/To-Do List/)
+    expect(screen.getByRole("textbox")).toHaveValue("")
 })
