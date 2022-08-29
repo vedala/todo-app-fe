@@ -7,5 +7,8 @@ test('renders the App page', () => {
 
     expect(screen.getByRole("heading")).toHaveTextContent(/To-Do List/)
     expect(screen.getByRole("textbox")).toHaveValue("")
-    expect(screen.getByRole("button", { name: "Create" } )).toBeDisabled()
+    const createBtn = screen.getByRole("button", { name: "Create" } )
+    expect(createBtn).toBeInTheDocument()
+    expect(createBtn).toBeDisabled()
+    expect(screen.getByRole("button", { name: "Enter Delete Mode"} )).toBeInTheDocument()
 })
