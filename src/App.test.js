@@ -11,4 +11,12 @@ test('renders the App page', () => {
     expect(createBtn).toBeInTheDocument()
     expect(createBtn).toBeDisabled()
     expect(screen.getByRole("button", { name: "Enter Delete Mode"} )).toBeInTheDocument()
+
+    const todoTab = screen.getByText(/TO DO [(]/)
+    const doneTab = screen.getByText(/DONE [(]/)
+    const allTab = screen.getByText(/ALL [(]/)
+
+    expect(todoTab).toBeInTheDocument()
+    expect(doneTab).toBeInTheDocument()
+    expect(allTab).toBeInTheDocument()
 })
