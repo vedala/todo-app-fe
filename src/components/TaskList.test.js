@@ -2,40 +2,41 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import TaskList from './TaskList'
 
-test('renders the task list for TO DO tab', () => {
-    const tasks = [
-        {
-            id: 1,
-            text: "item-1",
-            active: true,
-        },
-        {
-            id: 2,
-            text: "item-2",
-            active: true,
-        },
-        {
-            id: 3,
-            text: "item-3",
-            active: false,
-        },
-        {
-            id: 4,
-            text: "item-4",
-            active: false,
-        },
-        {
-            id: 5,
-            text: "item-5",
-            active: true,
-        },
-    ]
+const tasks = [
+    {
+        id: 1,
+        text: "item-1",
+        active: true,
+    },
+    {
+        id: 2,
+        text: "item-2",
+        active: true,
+    },
+    {
+        id: 3,
+        text: "item-3",
+        active: false,
+    },
+    {
+        id: 4,
+        text: "item-4",
+        active: false,
+    },
+    {
+        id: 5,
+        text: "item-5",
+        active: true,
+    },
+]
 
-    const MENU_TABS = {
-        TO_DO: 'TO_DO',
-        DONE: 'DONE',
-        ALL: 'ALL'
-    }
+const MENU_TABS = {
+    TO_DO: 'TO_DO',
+    DONE: 'DONE',
+    ALL: 'ALL'
+}
+
+test('renders the task list for TO DO tab', () => {
 
     render(<TaskList tasks={tasks} MENU_TABS={MENU_TABS} selectedTab={MENU_TABS.TO_DO} />)
     const items = screen.getAllByText(/item/)
@@ -47,39 +48,6 @@ test('renders the task list for TO DO tab', () => {
 })
 
 test('renders the task list for DONE tab', () => {
-    const tasks = [
-        {
-            id: 1,
-            text: "item-1",
-            active: true,
-        },
-        {
-            id: 2,
-            text: "item-2",
-            active: true,
-        },
-        {
-            id: 3,
-            text: "item-3",
-            active: false,
-        },
-        {
-            id: 4,
-            text: "item-4",
-            active: false,
-        },
-        {
-            id: 5,
-            text: "item-5",
-            active: true,
-        },
-    ]
-
-    const MENU_TABS = {
-        TO_DO: 'TO_DO',
-        DONE: 'DONE',
-        ALL: 'ALL'
-    }
 
     render(<TaskList tasks={tasks} MENU_TABS={MENU_TABS} selectedTab={MENU_TABS.DONE} />)
     const items = screen.getAllByText(/item/)
@@ -91,39 +59,6 @@ test('renders the task list for DONE tab', () => {
 
 
 test('renders the task list for ALL tab', () => {
-    const tasks = [
-        {
-            id: 1,
-            text: "item-1",
-            active: true,
-        },
-        {
-            id: 2,
-            text: "item-2",
-            active: true,
-        },
-        {
-            id: 3,
-            text: "item-3",
-            active: false,
-        },
-        {
-            id: 4,
-            text: "item-4",
-            active: false,
-        },
-        {
-            id: 5,
-            text: "item-5",
-            active: true,
-        },
-    ]
-
-    const MENU_TABS = {
-        TO_DO: 'TO_DO',
-        DONE: 'DONE',
-        ALL: 'ALL'
-    }
 
     render(<TaskList tasks={tasks} MENU_TABS={MENU_TABS} selectedTab={MENU_TABS.ALL} />)
     const items = screen.getAllByText(/item/)
