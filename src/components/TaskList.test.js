@@ -38,35 +38,59 @@ const MENU_TABS = {
 
 test('renders the task list for TO DO tab', () => {
 
+    let items
+
     render(<TaskList tasks={tasks} MENU_TABS={MENU_TABS} selectedTab={MENU_TABS.TO_DO} />)
-    const items = screen.getAllByText(/item/)
+    items = screen.getAllByText(/item/)
     expect(items.length).toBe(3)
     expect(items[0]).toHaveTextContent("item-1")
     expect(items[1]).toHaveTextContent("item-2")
     expect(items[2]).toHaveTextContent("item-5")
 
+    items = screen.getAllByRole("checkbox")
+    expect(items[0]).not.toBeChecked()
+    expect(items[1]).not.toBeChecked()
+    expect(items[2]).not.toBeChecked()
+
 })
 
 test('renders the task list for DONE tab', () => {
 
+    let items
+
     render(<TaskList tasks={tasks} MENU_TABS={MENU_TABS} selectedTab={MENU_TABS.DONE} />)
-    const items = screen.getAllByText(/item/)
+    items = screen.getAllByText(/item/)
     expect(items.length).toBe(2)
     expect(items[0]).toHaveTextContent("item-3")
     expect(items[1]).toHaveTextContent("item-4")
 
+    items = screen.getAllByRole("checkbox")
+    expect(items[0]).toBeChecked()
+    expect(items[1]).toBeChecked()
+ 
 })
 
 
 test('renders the task list for ALL tab', () => {
 
+    let items
+
     render(<TaskList tasks={tasks} MENU_TABS={MENU_TABS} selectedTab={MENU_TABS.ALL} />)
-    const items = screen.getAllByText(/item/)
+    items = screen.getAllByText(/item/)
     expect(items.length).toBe(5)
     expect(items[0]).toHaveTextContent("item-1")
     expect(items[1]).toHaveTextContent("item-2")
     expect(items[2]).toHaveTextContent("item-3")
     expect(items[3]).toHaveTextContent("item-4")
     expect(items[4]).toHaveTextContent("item-5")
+
+    // verify appropriate checkboxes are checked 
+    items = screen.getAllByRole("checkbox")
+    expect(items.length).toBe(5)
+    expect(items[0]).not.toBeChecked()
+    expect(items[1]).not.toBeChecked()
+    expect(items[2]).toBeChecked()
+    expect(items[3]).toBeChecked()
+    expect(items[4]).not.toBeChecked()
 
 })
