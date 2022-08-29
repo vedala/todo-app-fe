@@ -37,4 +37,8 @@ test('renders the menu', () => {
     }
 
     render(<Menu tasks={tasks} MENU_TABS={MENU_TABS.TO_DO} />)
+
+    expect(screen.getByText("TO DO (3)")).toBeInTheDocument
+    expect(screen.getByText("DONE (2)")).toBeInTheDocument
+    expect(screen.getByText("ALL (5)")).toBeInTheDocument
 })
