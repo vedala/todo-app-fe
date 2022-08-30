@@ -1,30 +1,31 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import TaskList from './TaskList'
+import { renderIntoDocument } from 'react-dom/test-utils'
 
 const tasks = [
     {
-        id: 1,
+        id: "id01",
         text: "item-1",
         active: true,
     },
     {
-        id: 2,
+        id: "id02",
         text: "item-2",
         active: true,
     },
     {
-        id: 3,
+        id: "id03",
         text: "item-3",
         active: false,
     },
     {
-        id: 4,
+        id: "id04",
         text: "item-4",
         active: false,
     },
     {
-        id: 5,
+        id: "id05",
         text: "item-5",
         active: true,
     },
@@ -93,4 +94,21 @@ test('renders the task list for ALL tab', () => {
     expect(items[3]).toBeChecked()
     expect(items[4]).not.toBeChecked()
 
+})
+
+test('should check checkbox on click in TO DO tab', () => {
+    const updateTaskStatus = jest.fn()
+
+    render(<TaskList
+        tasks={tasks}
+        MENU_TABS={MENU_TABS}
+        selectedTab={MENU_TABS.TO_DO}
+        updateTaskStatus={updateTaskStatus}
+    />)
+
+    const items = screen.getAllByRole("checkbox")
+    const itemToMarkDone = items[1]
+    fireEvent.click(itemToMarkDone)
+    expect(updateTaskStatus).toBeCalledTimes(1)
+    expect(updateTaskStatus).toBeCalledWith("id02")
 })
