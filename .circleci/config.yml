@@ -27,11 +27,11 @@ jobs:
       - attach_workspace:
           at: ~/build
       - aws-s3/sync:
-        aws-access-key-id: AWS_ACCESS_KEY_ID
-        aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-        aws-region: AWS_REGION
-        from: build
-        to: 's3://todo-kv-develop'
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_REGION
+          from: build
+          to: 's3://todo-kv-develop'
 
 workflows:
   deploy_to_dev:
