@@ -17,9 +17,9 @@ jobs:
           command: npm run build
           name: Build app
       - persist_to_workspace:
-          root: ~/build
+          root: .
           paths:
-            - .
+            - build
 
   deploy:
     docker:
