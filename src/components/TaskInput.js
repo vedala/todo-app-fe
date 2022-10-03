@@ -5,7 +5,7 @@ function TaskInput(props) {
     const [buttonIsDisabled, setButtonIsDisabled] = React.useState(true)
 
     function handleChange(event) {
-        const {name, value} = event.target
+        const {value} = event.target
         setTaskText(value)
     }
 
