@@ -1,0 +1,46 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.0.3
+  aws-s3: circleci/aws-s3@3.0.0
+
+jobs:
+  build_and_test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm run test
+          name: Run tests
+      - run:
+          command: npm run build
+          name: Build app
+      - persist_to_workspace:
+          root: ~/build
+          paths:
+            - .
+
+  deploy:
+    executor: aws-s3/default
+    steps:
+      - attach_workspace:
+          at: ~/build
+      - aws-s3/sync:
+        aws-access-key-id: AWS_ACCESS_KEY_ID
+        aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+        aws-region: AWS_REGION
+        from: build
+        to: 's3://todo-kv-develop'
+
+workflows:
+  deploy_to_dev:
+    jobs:
+      - build_and_test
+      - deploy:
+          requires:
+            - build_and_test
+          filters:
+            branches:
+              only: dev
+
