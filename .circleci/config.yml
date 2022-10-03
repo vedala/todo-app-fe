@@ -22,7 +22,6 @@ jobs:
             - .
 
   deploy:
-    executor: aws-s3/default
     steps:
       - attach_workspace:
           at: ~/build
